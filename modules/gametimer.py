@@ -8,25 +8,25 @@ class SwitchTimer:
         self.RoundLeft = RoundLeft
         self.CharacterGroups = CharacterGroups
         self.tick = 0
-        self.RoundTime 		= RoundTime * 1100 #seconds * 600
-        self.DelayToNextRound 	= 3 * 600
+        self.RoundTime = RoundTime * 1100 #seconds * 600
+        self.DelayToNextRound = 3 * 600
 
         #this hacks gives us a starting time
         self.isWaitingForNextRound = True
         self.SwitchMessage = "Slug it out!"
 
-	self.font = pygame.font.Font(None, 70)
+        self.font = pygame.font.Font(None, 70)
         self.font.set_bold(True)
 
-	self.text_font = pygame.font.Font(None, 40)
+        self.text_font = pygame.font.Font(None, 40)
         self.text_font.set_bold(True)
 
     def update(self, tick):
         self.tick += tick
 
         if (self.isWaitingForNextRound == False):
-	    if (self.tick > self.RoundTime):
-	        self.WaitForNextRound()
+            if (self.tick > self.RoundTime):
+                self.WaitForNextRound()
         else:
             if (self.tick > self.DelayToNextRound):
                 self.SwitchCharacters()
@@ -56,7 +56,7 @@ class SwitchTimer:
         if (self.isWaitingForNextRound == False):
             for i in range(1,4):
                 if (self.tick > self.RoundTime - (i * 1000)):
-		    TimeLeft = ((self.RoundTime - self.tick) / 1000.0) + 1
+                    TimeLeft = ((self.RoundTime - self.tick) / 1000.0) + 1
                     Milliseconds = ((self.RoundTime - self.tick) + 1000) / 1000.0
                     Milliseconds = math.modf(Milliseconds)[0]
                     text = self.font.render("%i" % TimeLeft, True, (0,0,0))
@@ -91,14 +91,14 @@ class SwitchTimer:
         
     def WaitForNextRound(self):
         self.isWaitingForNextRound = True
-	self.tick -= self.RoundTime
+        self.tick -= self.RoundTime
             
         for Character in self.CharacterGroups:
             Character.StopMovement()
 
     def SwitchCharacters(self):
         self.isWaitingForNextRound = False
-	self.tick -= self.DelayToNextRound
+        self.tick -= self.DelayToNextRound
 
         if (self.SwitchMessage == "Switch stance"):                #hack (see __init__)
             for Character in self.CharacterGroups:
@@ -106,7 +106,7 @@ class SwitchTimer:
 
             self.RoundLeft.subtract()
 
-        self.SwitchMessage = "Switch stance"        		  #hack (see __init__)
+        self.SwitchMessage = "Switch stance"                       #hack (see __init__)
 
 class MatchTimer:
     def __init__(self, CharacterGroups, match_time_in_seconds):
@@ -115,7 +115,7 @@ class MatchTimer:
         self.CharacterGroups = CharacterGroups
 
     def update(self, tick):
-    	self.tick += tick
+        self.tick += tick
 
         if (self.tick > self.match_time):
             for Character in self.CharacterGroups:
@@ -129,7 +129,7 @@ class MatchTimer:
     def draw(self, screen):
         MatchTimeLeft = ((self.match_time - self.tick) / 1000.0) - 0.05
         if (MatchTimeLeft < 0):
-	    MatchTimeLeft = 0
+            MatchTimeLeft = 0
         position = pygame.Rect((200,300), (50,50))
         text = font.render("%.2f" % MatchTimeLeft, True, (0,0,0))
 
@@ -141,10 +141,10 @@ class RoundLeft:
         self.Rounds = Rounds
         self.CharacterGroups = CharacterGroups
 
-	self.font = pygame.font.Font(None, 30)
+        self.font = pygame.font.Font(None, 30)
         self.font.set_bold(True)
 
-	self.text_font = pygame.font.Font(None, 40)
+        self.text_font = pygame.font.Font(None, 40)
         self.text_font.set_underline(True)
 
 #        self.Arrow = pygame.image.load("cutscene/opening1.png")
@@ -181,7 +181,7 @@ class RoundLeft:
             if (Character.isAttacker):
                 currentAttacker = Character
     
-	if (currentAttacker != None):
+        if (currentAttacker != None):
             if (currentAttacker.isPlayerOne):
                 str = "<- Current Attacker  "
             else:

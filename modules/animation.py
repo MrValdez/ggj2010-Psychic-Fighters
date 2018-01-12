@@ -3,35 +3,35 @@ import pygame
 class Animation():
     def __init__(self,
                  base_dir,
-                 animation_list_idle, 		animation_speed_idle,
-                 animation_list_overhead,	animation_speed_overhead,
-                 animation_list_uppercut,	animation_speed_uppercut,
-                 animation_list_blockup,	animation_speed_blockup,
-                 animation_list_blockdown,	animation_speed_blockdown,
-                 animation_list_reelup, 	animation_speed_reelup,
-                 animation_list_reeldown, 	animation_speed_reeldown,
+                 animation_list_idle, animation_speed_idle,
+                 animation_list_overhead, animation_speed_overhead,
+                 animation_list_uppercut, animation_speed_uppercut,
+                 animation_list_blockup, animation_speed_blockup,
+                 animation_list_blockdown, animation_speed_blockdown,
+                 animation_list_reelup, animation_speed_reelup,
+                 animation_list_reeldown, animation_speed_reeldown,
                  inverted):
         
         self.animation_list = { }
         self.animation_speed = { }
 
         animation_list = {
-            		   'idle' 	: (animation_list_idle, animation_speed_idle),
-                           'overhead' 	: (animation_list_overhead, animation_speed_overhead),
-                           'uppercut' 	: (animation_list_uppercut, animation_speed_uppercut),
-                           'blockup' 	: (animation_list_blockup, animation_speed_blockup),
-                           'blockdown' 	: (animation_list_blockdown, animation_speed_blockdown),
-		           'reelup'	: (animation_list_reelup, animation_speed_reelup),
-		           'reeldown'	: (animation_list_reeldown, animation_speed_reeldown),
+            'idle': (animation_list_idle, animation_speed_idle),
+            'overhead': (animation_list_overhead, animation_speed_overhead),
+            'uppercut': (animation_list_uppercut, animation_speed_uppercut),
+            'blockup': (animation_list_blockup, animation_speed_blockup),
+            'blockdown': (animation_list_blockdown, animation_speed_blockdown),
+            'reelup': (animation_list_reelup, animation_speed_reelup),
+            'reeldown': (animation_list_reeldown, animation_speed_reeldown),
                          }
 
         for (name, (list, speed)) in animation_list.items():
             self.animation_list[name] = self.GenerateFrameData(base_dir, list, inverted)
             self.animation_speed[name] = speed
             
-        self.current_animation 	     = 'idle'
+        self.current_animation       = 'idle'
         self.current_animation_speed = self.animation_speed['idle']
-	self.current_animation_frame = 0
+        self.current_animation_frame = 0
 
         self.current_tick = 0
 
@@ -50,12 +50,12 @@ class Animation():
         return FrameData
 
     def set(self, animation):
-        if (self.animation_list.has_key(animation)):
+        if (animation in self.animation_list):
             self.current_animation = animation
             self.current_animation_frame = 0
             self.current_tick = 0
         else:
-            print "warning: missing animation"
+            print("warning: missing animation")
         
     def get(self):
         return (self.animation_list[self.current_animation])[self.current_animation_frame]

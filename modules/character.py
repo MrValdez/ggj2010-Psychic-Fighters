@@ -18,18 +18,18 @@ class Score:
         
         self.rect = rect.copy()
         if (isPlayerOne):
-	    self.rect.x += 65
+            self.rect.x += 65
         else:
             self.rect.x -= 25
             
         self.rect.y += 10
         
         self.score = 0
-	self.player_font = pygame.font.Font(None, 20)
+        self.player_font = pygame.font.Font(None, 20)
         self.player_font.set_bold(False)
         self.player_font.set_underline(True)
         
-	self.score_font = pygame.font.Font(None, 30)
+        self.score_font = pygame.font.Font(None, 30)
         self.score_font.set_bold(True)
 
     def add(self, score):
@@ -87,7 +87,7 @@ class Character(pygame.sprite.Sprite):
         self.Score = Score(ScoreRect, self.isPlayerOne)
         
         self.current_startup_frame = 0
-	self.startup_frame = 10 * 60
+        self.startup_frame = 10 * 60
 
         self.current_recover_frame = 0
         self.recover_frame = 5 * 60
@@ -95,7 +95,7 @@ class Character(pygame.sprite.Sprite):
         self.current_active_frame = 0
         self.active_length = 2 * 80
 
-	self.current_attack_cooldown = 0
+        self.current_attack_cooldown = 0
         self.attack_cooldown = 100
 
     def update(self, tick, EventList):
@@ -150,11 +150,11 @@ class Character(pygame.sprite.Sprite):
                         self.has_attacked = True
                         self.current_attack_cooldown = self.attack_cooldown
                         self.Animation.set("uppercut")
-               	else:
+                else:
                    if (UpKey_pushed):
-                 	self.Animation.set("blockup")
+                        self.Animation.set("blockup")
                    if (DownKey_pushed):
-                 	self.Animation.set("blockdown")
+                        self.Animation.set("blockdown")
                        
         if (AttackEvent.CurrentAttack != None):
            if (AttackEvent.CurrentAttack == "overhead"):
@@ -178,9 +178,9 @@ class Character(pygame.sprite.Sprite):
                        AttackEvent.DamageDealt = 10
 
         if (self.current_attack_cooldown > 0):
-	    self.current_attack_cooldown -= tick
+            self.current_attack_cooldown -= tick
             
-	if (self.isAttacker == True):
+        if (self.isAttacker == True):
             if (self.has_attacked == True):
                 self.current_startup_frame += tick
 
@@ -202,9 +202,9 @@ class Character(pygame.sprite.Sprite):
                 if (AttackEvent.CurrentAttack != "blocked" and \
                     self.active_length - self.current_active_frame ) < 10:
                     if (self.Animation.get_name() == "overhead"):
-                    	AttackEvent.CurrentAttack = "overhead"
+                        AttackEvent.CurrentAttack = "overhead"
                     if (self.Animation.get_name() == "uppercut"):
-                    	AttackEvent.CurrentAttack = "uppercut"
+                        AttackEvent.CurrentAttack = "uppercut"
 
                     self.is_active = False
                     self.is_recovering = True
@@ -217,7 +217,7 @@ class Character(pygame.sprite.Sprite):
                     self.rect.top = self.original_pos[1]
                     self.Animation.set("idle")
                     if (AttackEvent.CurrentAttack != "blocked"):
-                    	self.Score.add(100)
+                        self.Score.add(100)
                     AttackEvent.CurrentAttack = None
 
                     self.current_startup_frame = 0                  
@@ -229,9 +229,9 @@ class Character(pygame.sprite.Sprite):
             self.DeceptionMeter = 100
         MeterBar = pygame.Rect(0, 0, 0, 0)
         if (self.isPlayerOne):
-	    MeterBar.left = 30
+            MeterBar.left = 30
         else:
-	    MeterBar.left = Game_resolution[0] - 140
+            MeterBar.left = Game_resolution[0] - 140
             
         MeterBar.top  =  self.rect.top + self.rect.height
         MeterBar.width = 110 * (self.DeceptionMeter / 100.0)
@@ -263,7 +263,7 @@ class Character(pygame.sprite.Sprite):
         DistanceFromBorder = -200
 
         if self.isPlayerOne:
-	    self.rect.left = DistanceFromBorder
+            self.rect.left = DistanceFromBorder
         else:
             self.rect.left = Game_resolution[0] - (DistanceFromBorder + self.rect.width)
             
@@ -272,7 +272,7 @@ class Character(pygame.sprite.Sprite):
         self.original_pos = [self.rect.x, self.rect.y]
         self.final_pos = [0,0]
         if (self.isPlayerOne):
-	    self.final_pos[0] = self.rect.left + 300
+            self.final_pos[0] = self.rect.left + 300
         else:
             self.final_pos[0] = self.rect.left - 300            
         self.final_pos[1] = self.rect.top

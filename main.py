@@ -26,15 +26,15 @@ while True:
             sys.exit()
 
     StateMachine = (
-        		("cutscene", Game.BeginningCutscene, "title screen - 1st run"),
-        		("title screen - 1st run", Game.TitleScreen, "tutorial"),
-        		("tutorial", Game.Tutorial, "character select"),
-        		("title screen", Game.TitleScreen, "character select"),
-        		("character select", Game.CharacterSelect, "load battle"),
-        		("load battle", Game.LoadBattle, "battle"),
-        		("battle", Game.BattleScreen, "title screen"),
-        		("winscreen1", Game.WinningScreen1, "title screen"),
-        		("winscreen2", Game.WinningScreen2, "title screen")
+                ("cutscene", Game.BeginningCutscene, "title screen - 1st run"),
+                ("title screen - 1st run", Game.TitleScreen, "tutorial"),
+                ("tutorial", Game.Tutorial, "character select"),
+                ("title screen", Game.TitleScreen, "character select"),
+                ("character select", Game.CharacterSelect, "load battle"),
+                ("load battle", Game.LoadBattle, "battle"),
+                ("battle", Game.BattleScreen, "title screen"),
+                ("winscreen1", Game.WinningScreen1, "title screen"),
+                ("winscreen2", Game.WinningScreen2, "title screen")
                     )
 
     for State in StateMachine:
@@ -47,7 +47,7 @@ while True:
                 CurrentState = "winscreen1"
                 break
             if (Result == "winner2"):
-            	CurrentState = "winscreen2"
+                CurrentState = "winscreen2"
                 break
             
     pygame.display.flip()

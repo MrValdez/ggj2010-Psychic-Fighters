@@ -22,4 +22,4 @@ class CharacterData:
          self.reelup_animation_files = reelup_animation_files
          self.reelup_animation_speed = reelup_animation_speed
          self.reeldown_animation_files = reeldown_animation_files
-         self.reeldown_animation_speed = reeldown_animation_files
+         self.reeldown_animation_speed = reeldown_animation_speed

@@ -5,7 +5,7 @@ class Shadow(pygame.sprite.Sprite):
     def __init__(self, image, rect, y_delta, isPlayerOne):
         pygame.sprite.Sprite.__init__(self, self.containers)
 
-	self.image = image.convert()
+        self.image = image.convert()
         self.rect = rect
 
         self.final_pos = [0,0]
@@ -13,7 +13,7 @@ class Shadow(pygame.sprite.Sprite):
 
         self.original_pos = [rect.x, rect.y]
         if (isPlayerOne == True):
-	    self.final_pos[0] = self.original_pos[0] + 120
+            self.final_pos[0] = self.original_pos[0] + 120
         else:
             self.final_pos[0] = self.original_pos[0] - 150
         self.final_pos[1] = self.original_pos[1] + y_delta
