@@ -111,7 +111,7 @@ class Game:
                 (2, 3, "Agent I: That's it???", ""),
                 (2, 2, "Mister Muscle: That's it.", ""),
                 (2, 3, "...................", "Agent I: Oh."),
-                (3, 1, "Agent I: Ok. Thanks.", "Byebye. Thanks for the tip.")
+                (3, 3, "Agent I: Ok. Thanks.", "Byebye. Thanks for the tip.")
             )
         
         self.Win1CutsceneData = Cutscene(cutscene_files, cutscene_data)
