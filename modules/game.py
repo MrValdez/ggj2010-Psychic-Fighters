@@ -33,6 +33,7 @@ class Cutscene:
                 return "done"
 
         self.cutscene_tick += tick
+        self.current_cutscene = 0 if self.current_cutscene > len(self.cutscene_data) else self.current_cutscene
         cutscene = self.cutscene_data[self.current_cutscene]
 
         if (self.cutscene_tick > (cutscene[1] * 1000)):
