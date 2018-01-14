@@ -1,14 +1,27 @@
+Deception-based Fighting Game. Two Psychics slug it out!! 
+
+# Game description
+Psychic Fighters is a two player game of deception. The goal is to outsmart your opponent with feints. The game is played in turns, with one player being an attacker and the other player being the defender.
+
+# About
 This is my first global game jam game I've ever created. Its called Psychic Fighters.
 
 The theme for 2010 is "Deception". We've decided to make a game where the players are "psychic" and can sense their opponent's attack.
 
 The game is played by two players (there's no AI). Controls for Overhead and Uppercut are as follows: Player 1 - W and D; Player 2 - Up and Down.
 
-**Code**
+# Code
 
 This is the first time I made a non-demo game in python and pygame. Frankly, I am quite embarrased by my code. But everyone have to start somewhere.
 
 The most embarrasing thing I've done is mix spaces and tabs. Well, it worked on python 2.6, so I didn't noticed until I needed to show off the game and it didn't work on newer python versions.
 
+# Art
+The art was done by MikeTien, who I collaborated with at the jam.
+
+# Original entry
+http://globalgamejam.org/2010/psychic-fighters
+
+# todo
 
 (more information about the game will be post later. I'm still writing it)
