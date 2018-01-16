@@ -53,6 +53,7 @@ The twist here is that the defender will sense (in a form of a visual shadow) if
 ## Mister Muscleman
 
 ![Muscleman attack animation](https://raw.githubusercontent.com/MrValdez/ggj2010-Psychic-Fighters/master/muscleman/muscleman-attack.gif)
+
 Psychic Boxer with a heart of gold. Very naive.
 
 His ending is typical of fighting game comedy endings and we are shown that the final boss is incompetent in the basics of using psychic fighting.
@@ -62,6 +63,7 @@ Only available as player 1 because of game jam constraints
 ## Spark Plug
 
 ![Spark Plug attack animation](https://raw.githubusercontent.com/MrValdez/ggj2010-Psychic-Fighters/master/slimdude/slimdude-attack2.gif)
+
 Technological whiz kid who is somehow using precognition to gain knowledge of his enemies.
 
 His ending is typical of fighting game serious endings and is an obvious Matrix rip-off.
@@ -71,10 +73,12 @@ Only available as player 2 because of game jam constraints
 ## Agent I
 
 ![Agent I](https://raw.githubusercontent.com/MrValdez/ggj2010-Psychic-Fighters/master/cutscene/muscleman%20fight%20scene%20with%20AI.png)
+
 The final boss of the game (non playable).
 
 ## Everyone else
 ![Character select](https://raw.githubusercontent.com/MrValdez/ggj2010-Psychic-Fighters/master/GUI/character%20select.png)
+
 Characters that we would have implemented if we built this into a real game.
 
 # Tips
