@@ -88,3 +88,6 @@ Characters that we would have implemented if we built this into a real game.
 
 # My blog post on the experience
 [https://mrvaldez.ph/global-game-jam-2010-my-experience](https://mrvaldez.ph/global-game-jam-2010-my-experience)
+
+# License
+This project is licensed under the MIT License - see the LICENSE file for details
