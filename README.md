@@ -90,8 +90,10 @@ Characters that we would have implemented if we built this into a real game.
 # Original Global Game Jam 2010 entry
 [http://globalgamejam.org/2010/psychic-fighters](http://globalgamejam.org/2010/psychic-fighters)
 
-# My blog post on the experience
-[https://mrvaldez.ph/global-game-jam-2010-my-experience](https://mrvaldez.ph/global-game-jam-2010-my-experience)
+# My blog posts
+
+1. [On the experience of doing a game jam](https://mrvaldez.ph/global-game-jam-2010-my-experience)
+1. [Programming the game](https://mrvaldez.ph/global-game-jam-2010-programming)
 
 # License
 This project is licensed under the MIT License - see the LICENSE file for details
